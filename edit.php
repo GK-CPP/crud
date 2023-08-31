@@ -83,7 +83,6 @@ include 'header.php'; ?>
                 <input type="text" name="sphone" value=" <?= $row['sphone']; ?>" />
             </div>
             <input class="submit" type="submit" value="Update" />
-
         </form>
     <?php }
     ?>
