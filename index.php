@@ -37,7 +37,7 @@ include 'header.php';
                         <td><?= $row['sid']; ?></td>
                         <td><?= $row['sname']; ?></td>
                         <td> <?= $row['address']; ?></td>
-                        <td><?= $row['sclass']; ?></td>
+                        <td><?= $row['cname']; ?></td>
                         <td><?= $row['sphone']; ?></td>
                         <td>
                             <a href='edit.php?id=<?= $row['sid']; ?>'>Edit</a>
