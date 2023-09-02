@@ -31,7 +31,7 @@ include 'header.php';
 
                 <?php foreach ($data as $key => $row) { ?>
                     <tr>
-                        <td><?= $key + 1; ?></td>
+                        <td><?= ($key + 1) . '( ' . $row['sid'] . ' )'; ?> </td>
                         <td><?= $row['sname']; ?></td>
                         <td> <?= $row['address']; ?></td>
                         <td><?= $row['cname']; ?></td>
@@ -42,6 +42,7 @@ include 'header.php';
                                 <input type="hidden" name="sid" value="<?= $row['sid']; ?>">
                                 <input type="submit" value="Delete">
                             </form>
+
                         </td>
                     </tr>
                 <?php } ?>
