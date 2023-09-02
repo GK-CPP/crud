@@ -4,11 +4,7 @@ include 'db.php';
 $sql = "select * from student join studentclass where student.sclass= studentclass.cid";
 $result = $conn->query($sql);
 
-//echo "<pre>";
 $data = $result->fetch_all(MYSQLI_ASSOC);
-//print_r($data[0]['sid']);
-//die;
-
 
 // return as api response josn
 // echo json_encode($data);
@@ -32,16 +28,20 @@ include 'header.php';
                 <th>Action</th>
             </thead>
             <tbody>
-                <?php foreach ($data as $row) { ?>
+
+                <?php foreach ($data as $key => $row) { ?>
                     <tr>
-                        <td><?= $row['sid']; ?></td>
+                        <td><?= $key + 1; ?></td>
                         <td><?= $row['sname']; ?></td>
                         <td> <?= $row['address']; ?></td>
                         <td><?= $row['cname']; ?></td>
                         <td><?= $row['sphone']; ?></td>
                         <td>
                             <a href='edit.php?id=<?= $row['sid']; ?>'>Edit</a>
-                            <a href='delete-inline.php'>Delete</a>
+                            <form action="delete-inline.php" method="post">
+                                <input type="hidden" name="sid" value="<?= $row['sid']; ?>">
+                                <input type="submit" value="Delete">
+                            </form>
                         </td>
                     </tr>
                 <?php } ?>
