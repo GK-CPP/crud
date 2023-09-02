@@ -22,7 +22,6 @@
                 $result = $conn->query($sql);
                 $data = $result->fetch_all(MYSQLI_ASSOC);
                 foreach ($data as $row) {
-
                 ?>
                     <option value="<?= $row['cid']; ?>"><?= $row['cname']; ?></option>
                 <?php } ?>

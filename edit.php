@@ -5,12 +5,7 @@ try {
     $sql = "SELECT * FROM student WHERE sid={$_GET['id']}";
 
     $result = $conn->query($sql);
-
-    //echo "<pre>";
-    // fetch single row
     $row = $result->fetch_assoc();
-    //print_r($row);
-    // die;
 } catch (Exception $e) {
     echo $e->getMessage();
     die;
